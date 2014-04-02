@@ -1,6 +1,6 @@
 # AUTEUR   : Damien
 # CREATION : 02/04/2014
-# VERSION  : 0.1
+# VERSION  : 0.2
 
 # Aide technique : http://www.utc.fr/~mecagom4/MECAWEB/EXEMPLE/EX13/WEB/piano.htm
 
@@ -38,12 +38,20 @@ def getFrequence(note, num):
     return (a**n) * fLa3
 
 
-notes = [("do", 3),("re", 3),("mi", 3),("fa", 3),("sol", 3),("la", 3),("si", 3)]
+def play(listNotes):
+    for x in listNotes:
+        f = int(getFrequence(x[0],x[1]))
+        winsound.Beep(f, x[2] * 200)
 
-notes2 = [("do", 3),("re", 3),("mi", 3),("fa", 3),("sol", 3),("la", 3),("si", 3),("do", 4),("re", 4),("mi", 4),("fa", 4),("sol", 4),("la", 4),("si", 4),("do", 5),("re", 5),("mi", 5),("fa", 5),("sol", 5),("la", 5),("si", 5),("do", 6)]
+# notes = [("do", 3),("re", 3),("mi", 3),("fa", 3),("sol", 3),("la", 3),("si", 3)]
 
-auClairDeLaLune = [("sol", 3),("sol", 3),("sol", 3),("la", 3),("si", 3),("la", 3),("sol", 3),("si", 3),("la", 3),("la", 3),("sol", 3)]
+# notes2 = [("do", 3),("re", 3),("mi", 3),("fa", 3),("sol", 3),("la", 3),("si", 3),("do", 4),("re", 4),("mi", 4),("fa", 4),("sol", 4),("la", 4),("si", 4),("do", 5),("re", 5),("mi", 5),("fa", 5),("sol", 5),("la", 5),("si", 5),("do", 6)]
 
-for x in notes:
-    f = int(getFrequence(x[0],x[1]))
-    winsound.Beep(f, 300)
+# auClairDeLaLune = [("sol", 3),("sol", 3),("sol", 3),("la", 3),("si", 3),("la", 3),("sol", 3),("si", 3),("la", 3),("la", 3),("sol", 3)]
+
+# Une note est définie par son nom (1), son "octave" (2) et sa durée ('1' (Croche), '2' (Noire), '4' (Blanche) ou '6' (Blanche pointée))
+# -> (nom, octave, durée)
+
+lettreAElise = [("fa", 4, 1),("mi", 4, 1),("fa", 4, 1),("mi", 4, 1),("fa", 4, 1),("si", 3, 1),("re", 4, 1),("do", 4, 1),("la", 3, 1)]
+
+play(lettreAElise)
