@@ -1,3 +1,4 @@
+# -*- coding: utf8 -*-
 # AUTEUR   : Damien
 # CREATION : 02/04/2014
 # VERSION  : 0.2
